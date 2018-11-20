@@ -1,0 +1,20 @@
+{
+    "projectName": "serverlessGraphqlApp",
+    "projectPath": "/Users/jameshamann/Documents/Sample_Logistics/Development/serverless-graphql-react-webapp",
+    "defaultEditor": "atom",
+    "frontendHandler": {
+        "javascript": "/usr/local/lib/node_modules/@aws-amplify/cli/node_modules/amplify-frontend-javascript"
+    },
+    "javascript": {
+        "framework": "react",
+        "config": {
+            "SourceDir": "src",
+            "DistributionDir": "build",
+            "BuildCommand": "yarn build",
+            "StartCommand": "yarn start"
+        }
+    },
+    "providers": {
+        "awscloudformation": "/usr/local/lib/node_modules/@aws-amplify/cli/node_modules/amplify-provider-awscloudformation"
+    }
+}

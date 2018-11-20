@@ -1,0 +1,14 @@
+{
+    "providers": {
+        "awscloudformation": {
+            "AuthRoleName": "serverlessraphqlpp-20181120161930-authRole",
+            "UnauthRoleArn": "arn:aws:iam::677471806624:role/serverlessraphqlpp-20181120161930-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::677471806624:role/serverlessraphqlpp-20181120161930-authRole",
+            "Region": "eu-west-1",
+            "DeploymentBucketName": "serverlessraphqlpp-20181120161930-deployment",
+            "UnauthRoleName": "serverlessraphqlpp-20181120161930-unauthRole",
+            "StackName": "serverlessraphqlpp-20181120161930",
+            "StackId": "arn:aws:cloudformation:eu-west-1:677471806624:stack/serverlessraphqlpp-20181120161930/0f6ef700-ece0-11e8-84ef-02beba5c02de"
+        }
+    }
+}
