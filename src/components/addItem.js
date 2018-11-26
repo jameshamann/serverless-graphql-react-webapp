@@ -11,9 +11,12 @@ import Button from '@material-ui/core/Button';
 
 class AddItem extends Component {
 
-
   state = {
     open: false,
+    itemName: '',
+    itemPrice: '',
+    itemRating: '',
+    itemDescription: ''
   };
 
   handleClickOpen = () => {
