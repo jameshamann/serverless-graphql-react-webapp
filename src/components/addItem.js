@@ -3,7 +3,6 @@ import TextField from '@material-ui/core/TextField';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
-import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import AddIcon from '@material-ui/icons/Add';
 import Button from '@material-ui/core/Button';
@@ -30,10 +29,9 @@ class AddItem extends Component {
     this.setState({
       [name]: event.target.value,
     });
+    console.log("Name: " + this.state.itemName + " Price: £" + this.state.itemPrice + " Description:" + this.state.itemDescription)
   };
-
-
-
+  
   render() {
       return (
       <div style={{display: 'flex', flexWrap: 'wrap'}}>
@@ -48,27 +46,25 @@ class AddItem extends Component {
         >
           <DialogTitle id="form-dialog-title">Add a New Item</DialogTitle>
           <DialogContent>
-            <DialogContentText>
 
-            </DialogContentText>
               <TextField
                 style={{marginRight: 10}}
-                id="beerName"
+                id="itemName"
                 label="Name"
                 type="string"
                 onChange={this.handleChange('itemName')}
               />
               <TextField
                 style={{marginRight: 10}}
-                id="beerRating"
-                label="Rating"
+                id="itemPrice"
+                label="Price"
                 type="number"
-                onChange={this.handleChange('itemRating')}
+                onChange={this.handleChange('itemPrice')}
               />
               <TextField
                 style={{marginTop: 10}}
                 multiline
-                id="beerDescription"
+                id="itemDescription"
                 label="Description"
                 type="string"
                 rows="4"
