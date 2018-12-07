@@ -15,7 +15,6 @@ class AddItem extends Component {
     open: false,
     itemName: '',
     itemPrice: '',
-    itemRating: '',
     itemDescription: ''
   };
 
@@ -58,13 +57,6 @@ class AddItem extends Component {
                 label="Name"
                 type="string"
                 onChange={this.handleChange('itemName')}
-              />
-              <TextField
-                style={{marginRight: 10}}
-                id="beerABV"
-                label="ABV%"
-                type="number"
-                onChange={this.handleChange('itemPrice')}
               />
               <TextField
                 style={{marginRight: 10}}
