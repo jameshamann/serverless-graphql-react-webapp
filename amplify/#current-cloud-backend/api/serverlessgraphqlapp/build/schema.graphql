@@ -1,0 +1,116 @@
+type Item {
+  id: ID!
+  name: String!
+  price: Int
+  description: String
+}
+
+enum ModelSortDirection {
+  ASC
+  DESC
+}
+
+type ModelItemConnection {
+  items: [Item]
+  nextToken: String
+}
+
+input ModelStringFilterInput {
+  ne: String
+  eq: String
+  le: String
+  lt: String
+  ge: String
+  gt: String
+  contains: String
+  notContains: String
+  between: [String]
+  beginsWith: String
+}
+
+input ModelIDFilterInput {
+  ne: ID
+  eq: ID
+  le: ID
+  lt: ID
+  ge: ID
+  gt: ID
+  contains: ID
+  notContains: ID
+  between: [ID]
+  beginsWith: ID
+}
+
+input ModelIntFilterInput {
+  ne: Int
+  eq: Int
+  le: Int
+  lt: Int
+  ge: Int
+  gt: Int
+  contains: Int
+  notContains: Int
+  between: [Int]
+}
+
+input ModelFloatFilterInput {
+  ne: Float
+  eq: Float
+  le: Float
+  lt: Float
+  ge: Float
+  gt: Float
+  contains: Float
+  notContains: Float
+  between: [Float]
+}
+
+input ModelBooleanFilterInput {
+  ne: Boolean
+  eq: Boolean
+}
+
+input ModelItemFilterInput {
+  id: ModelIDFilterInput
+  name: ModelStringFilterInput
+  price: ModelIntFilterInput
+  description: ModelStringFilterInput
+  and: [ModelItemFilterInput]
+  or: [ModelItemFilterInput]
+  not: ModelItemFilterInput
+}
+
+type Query {
+  getItem(id: ID!): Item
+  listItems(filter: ModelItemFilterInput, limit: Int, nextToken: String): ModelItemConnection
+}
+
+input CreateItemInput {
+  id: ID
+  name: String!
+  price: Int
+  description: String
+}
+
+input UpdateItemInput {
+  id: ID!
+  name: String
+  price: Int
+  description: String
+}
+
+input DeleteItemInput {
+  id: ID
+}
+
+type Mutation {
+  createItem(input: CreateItemInput!): Item
+  updateItem(input: UpdateItemInput!): Item
+  deleteItem(input: DeleteItemInput!): Item
+}
+
+type Subscription {
+  onCreateItem: Item @aws_subscribe(mutations: ["createItem"])
+  onUpdateItem: Item @aws_subscribe(mutations: ["updateItem"])
+  onDeleteItem: Item @aws_subscribe(mutations: ["deleteItem"])
+}

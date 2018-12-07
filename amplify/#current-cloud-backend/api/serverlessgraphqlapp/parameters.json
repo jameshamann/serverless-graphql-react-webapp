@@ -1,0 +1,7 @@
+{
+    "AppSyncApiName": "serverlessgraphqlapp",
+    "schemaGraphql": "s3://serverlessraphqlpp-20181120161930-deployment/amplify-appsync-files/schema.graphql.1544115410148",
+    "ResolverBucket": "serverlessraphqlpp-20181120161930-deployment",
+    "ResolverRootKey": "amplify-appsync-files",
+    "DeploymentTimestamp": "1544115410148"
+}
