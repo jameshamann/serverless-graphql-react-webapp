@@ -6,6 +6,8 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import AddIcon from '@material-ui/icons/Add';
 import Button from '@material-ui/core/Button';
+import { API, graphqlOperation } from "aws-amplify";
+import * as mutations from '../graphql/mutations';
 
 
 class AddItem extends Component {
@@ -31,7 +33,20 @@ class AddItem extends Component {
     });
     console.log("Name: " + this.state.itemName + " Price: £" + this.state.itemPrice + " Description:" + this.state.itemDescription)
   };
-  
+
+
+  handleSubmit = (e) => {
+    this.setState({ open: false });
+    var itemDetails = {
+      name: this.state.itemName,
+      price: this.state.itemPrice,
+      description: this.state.beerDescription,
+    }
+    console.log("Item Details : " + JSON.stringify(itemDetails))
+    API.graphql(graphqlOperation(mutations.createItem, {input: itemDetails}));
+    // window.location.reload()
+  }
+
   render() {
       return (
       <div style={{display: 'flex', flexWrap: 'wrap'}}>
