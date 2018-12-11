@@ -40,7 +40,7 @@ class AddItem extends Component {
     var itemDetails = {
       name: this.state.itemName,
       price: this.state.itemPrice,
-      description: this.state.beerDescription,
+      description: this.state.itemDescription,
     }
     console.log("Item Details : " + JSON.stringify(itemDetails))
     API.graphql(graphqlOperation(mutations.createItem, {input: itemDetails}));
