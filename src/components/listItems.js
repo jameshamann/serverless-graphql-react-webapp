@@ -7,6 +7,7 @@ import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
+import EditItem from './editItem'
 import { API, graphqlOperation }  from "aws-amplify";
 import * as queries from '../graphql/queries';
 
@@ -75,7 +76,7 @@ class ListItems extends Component {
                       </Typography>
                   </CardContent>
                     <CardActions>
-                     <Button size="small">Edit Item</Button>
+                      <EditItem currentItem={item}/>
                    </CardActions>
                  </Card>
                </Grid>
