@@ -4,10 +4,10 @@ import { withStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
-import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import EditItem from './editItem'
+import DeleteItem from './deleteItem'
 import { API, graphqlOperation }  from "aws-amplify";
 import * as queries from '../graphql/queries';
 
@@ -55,7 +55,6 @@ class ListItems extends Component {
   render(){
     const { classes } = this.props;
     const { items } = this.state;
-    const bull = <span className={classes.bullet}>•</span>;
     console.log(items)
     return (
       <div className={classes.root}>
@@ -77,6 +76,7 @@ class ListItems extends Component {
                   </CardContent>
                     <CardActions>
                       <EditItem currentItem={item}/>
+                      <DeleteItem currentItem={item}/>
                    </CardActions>
                  </Card>
                </Grid>
