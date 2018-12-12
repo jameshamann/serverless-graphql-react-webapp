@@ -59,7 +59,7 @@ class EditItem extends Component {
           onClose={this.handleClose}
           aria-labelledby="form-dialog-title"
         >
-          <DialogTitle id="form-dialog-title">Edit Item</DialogTitle>
+          <DialogTitle id="form-dialog-title">Edit Item: {this.props.currentItem.name}</DialogTitle>
           <DialogContent>
 
               <TextField
