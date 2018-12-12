@@ -50,7 +50,7 @@ class DeleteItem extends Component {
               Cancel
             </Button>
             <Button onClick={this.handleDelete} color="primary">
-              Delete Item
+              Delete
             </Button>
           </DialogActions>
         </Dialog>
