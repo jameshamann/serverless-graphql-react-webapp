@@ -35,8 +35,8 @@ class DeleteItem extends Component {
   render() {
       return (
       <div style={{display: 'flex', flexWrap: 'wrap'}}>
-      <Button size='small' color="inherit" aria-label="Add" onClick={this.handleClickOpen}>
-        <DeleteIcon size='small' />
+      <Button style={{marginLeft: "125px"}}size='small' color="inherit" aria-label="Add" onClick={this.handleClickOpen}>
+        <DeleteIcon />
       </Button>
 
         <Dialog

@@ -50,8 +50,8 @@ class EditItem extends Component {
   render() {
       return (
       <div style={{display: 'flex', flexWrap: 'wrap'}}>
-      <Button size='small' color="inherit" aria-label="Add" onClick={this.handleClickOpen}>
-        <EditIcon size='small' />
+      <Button size='small' color="inherit" aria-label="Edit" onClick={this.handleClickOpen}>
+        <EditIcon />
       </Button>
 
         <Dialog
@@ -95,7 +95,7 @@ class EditItem extends Component {
               Cancel
             </Button>
             <Button onClick={this.handleSubmit} color="primary">
-              Add Item
+              Submit
             </Button>
           </DialogActions>
         </Dialog>
